@@ -1,11 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="GSV_EnvioImpuestoRentaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="GSV_EnvioImpuestoRentaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GSV_EnvioImpuestoRentaModelStoreContainer">
+    <EntitySet Name="ImpuestoRenta" EntityType="GSV_EnvioImpuestoRentaModel.Store.ImpuestoRenta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImpuestoRentaTipo" EntityType="GSV_EnvioImpuestoRentaModel.Store.ImpuestoRentaTipo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Log" EntityType="GSV_EnvioImpuestoRentaModel.Store.Log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="GSV_EnvioImpuestoRentaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="GSV_EnvioImpuestoRentaModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LogActividad" EntityType="GSV_EnvioImpuestoRentaModel.Store.LogActividad" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__ImpuestoR__impue__1ED998B2" Association="GSV_EnvioImpuestoRentaModel.Store.FK__ImpuestoR__impue__1ED998B2">
+      <End Role="ImpuestoRentaTipo" EntitySet="ImpuestoRentaTipo" />
+      <End Role="ImpuestoRenta" EntitySet="ImpuestoRenta" />
+    </AssociationSet>
+    <AssociationSet Name="impuestorenta_id" Association="GSV_EnvioImpuestoRentaModel.Store.impuestorenta_id">
+      <End Role="ImpuestoRenta" EntitySet="ImpuestoRenta" />
+      <End Role="LogActividad" EntitySet="LogActividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LogActivi__log_i__164452B1" Association="GSV_EnvioImpuestoRentaModel.Store.FK__LogActivi__log_i__164452B1">
+      <End Role="Log" EntitySet="Log" />
+      <End Role="LogActividad" EntitySet="LogActividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LogActivi__usuar__15502E78" Association="GSV_EnvioImpuestoRentaModel.Store.FK__LogActivi__usuar__15502E78">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="LogActividad" EntitySet="LogActividad" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="ImpuestoRenta">
     <Key>
       <PropertyRef Name="impuestorenta_id" />
     </Key>
     <Property Name="impuestorenta_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="impuestorentatipo_id" Type="int" />
+    <Property Name="impuestorentatipo_id" Type="int" Nullable="true" />
     <Property Name="esta_activo" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="ImpuestoRentaTipo">
@@ -13,7 +37,7 @@
       <PropertyRef Name="impuestorentatipo_id" />
     </Key>
     <Property Name="impuestorentatipo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion_impuesto_renta_tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion_impuesto_renta_tipo" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="esta_activo" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Log">
@@ -21,47 +45,47 @@
       <PropertyRef Name="log_id" />
     </Key>
     <Property Name="log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion_log" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion_log" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="esta_activo" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="LogActividad">
-    <Key>
-      <PropertyRef Name="logactividad_id" />
-    </Key>
-    <Property Name="logactividad_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="usuario_id" Type="int" />
-    <Property Name="log_id" Type="int" />
-    <Property Name="descripcion_accion" Type="varchar" MaxLength="500" />
-    <Property Name="nombre_usuario" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="fecha_accion" Type="datetime" Nullable="false" />
-    <Property Name="condicion_accion" Type="bit" Nullable="false" />
-    <Property Name="esta_activo" Type="bit" Nullable="false" />
-    <Property Name="impuestorenta_id" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
     <Property Name="principal_id" Type="int" Nullable="false" />
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
       <PropertyRef Name="usuario_id" />
     </Key>
     <Property Name="usuario_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre_usuario" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="correo_electronico" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre_usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="correo_electronico" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="esta_activo" Type="bit" Nullable="false" />
-    <Property Name="rut" Type="varchar" MaxLength="50" />
-    <Property Name="clave" Type="varchar" MaxLength="50" />
+    <Property Name="rut" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="clave" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LogActividad">
+    <Key>
+      <PropertyRef Name="logactividad_id" />
+    </Key>
+    <Property Name="logactividad_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario_id" Type="int" Nullable="true" />
+    <Property Name="log_id" Type="int" Nullable="true" />
+    <Property Name="descripcion_accion" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="nombre_usuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="fecha_accion" Type="datetime" Nullable="false" />
+    <Property Name="condicion_accion" Type="bit" Nullable="false" />
+    <Property Name="esta_activo" Type="bit" Nullable="false" />
+    <Property Name="impuestorenta_id" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="FK__ImpuestoR__impue__1ED998B2">
-    <End Role="ImpuestoRentaTipo" Type="Self.ImpuestoRentaTipo" Multiplicity="0..1" />
-    <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="*" />
+    <End Role="ImpuestoRentaTipo" Type="GSV_EnvioImpuestoRentaModel.Store.ImpuestoRentaTipo" Multiplicity="0..1" />
+    <End Role="ImpuestoRenta" Type="GSV_EnvioImpuestoRentaModel.Store.ImpuestoRenta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ImpuestoRentaTipo">
         <PropertyRef Name="impuestorentatipo_id" />
@@ -71,9 +95,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="impuestorenta_id">
+    <End Role="ImpuestoRenta" Type="GSV_EnvioImpuestoRentaModel.Store.ImpuestoRenta" Multiplicity="0..1" />
+    <End Role="LogActividad" Type="GSV_EnvioImpuestoRentaModel.Store.LogActividad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImpuestoRenta">
+        <PropertyRef Name="impuestorenta_id" />
+      </Principal>
+      <Dependent Role="LogActividad">
+        <PropertyRef Name="impuestorenta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__LogActivi__log_i__164452B1">
-    <End Role="Log" Type="Self.Log" Multiplicity="0..1" />
-    <End Role="LogActividad" Type="Self.LogActividad" Multiplicity="*" />
+    <End Role="Log" Type="GSV_EnvioImpuestoRentaModel.Store.Log" Multiplicity="0..1" />
+    <End Role="LogActividad" Type="GSV_EnvioImpuestoRentaModel.Store.LogActividad" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Log">
         <PropertyRef Name="log_id" />
@@ -84,8 +120,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__LogActivi__usuar__15502E78">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
-    <End Role="LogActividad" Type="Self.LogActividad" Multiplicity="*" />
+    <End Role="Usuario" Type="GSV_EnvioImpuestoRentaModel.Store.Usuario" Multiplicity="0..1" />
+    <End Role="LogActividad" Type="GSV_EnvioImpuestoRentaModel.Store.LogActividad" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
         <PropertyRef Name="usuario_id" />
@@ -95,40 +131,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="impuestorenta_id">
-    <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="0..1" />
-    <End Role="LogActividad" Type="Self.LogActividad" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ImpuestoRenta">
-        <PropertyRef Name="impuestorenta_id" />
-      </Principal>
-      <Dependent Role="LogActividad">
-        <PropertyRef Name="impuestorenta_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="GSV_EnvioImpuestoRentaModelStoreContainer">
-    <EntitySet Name="ImpuestoRenta" EntityType="Self.ImpuestoRenta" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ImpuestoRentaTipo" EntityType="Self.ImpuestoRentaTipo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LogActividad" EntityType="Self.LogActividad" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ImpuestoR__impue__1ED998B2" Association="Self.FK__ImpuestoR__impue__1ED998B2">
-      <End Role="ImpuestoRentaTipo" EntitySet="ImpuestoRentaTipo" />
-      <End Role="ImpuestoRenta" EntitySet="ImpuestoRenta" />
-    </AssociationSet>
-    <AssociationSet Name="FK__LogActivi__log_i__164452B1" Association="Self.FK__LogActivi__log_i__164452B1">
-      <End Role="Log" EntitySet="Log" />
-      <End Role="LogActividad" EntitySet="LogActividad" />
-    </AssociationSet>
-    <AssociationSet Name="FK__LogActivi__usuar__15502E78" Association="Self.FK__LogActivi__usuar__15502E78">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="LogActividad" EntitySet="LogActividad" />
-    </AssociationSet>
-    <AssociationSet Name="impuestorenta_id" Association="Self.impuestorenta_id">
-      <End Role="ImpuestoRenta" EntitySet="ImpuestoRenta" />
-      <End Role="LogActividad" EntitySet="LogActividad" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

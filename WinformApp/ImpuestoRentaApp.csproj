@@ -42,6 +42,12 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FastMember, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.4.1\lib\net461\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSet UI, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroSet_UI.1.0.3\lib\net45\MetroSet UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -62,12 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +91,12 @@
     </Compile>
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPrincipal.Designer.cs">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="ImpuestoRentaAppBLL\ImpuestoRentaTipoBLL.cs" />
     <Compile Include="ImpuestoRentaAppBLL\LogActividadBLL.cs" />
@@ -137,9 +143,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Constantes.cs" />
     <Compile Include="Util\Utilitario.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -193,6 +199,7 @@
       <DependentUpon>ImpuestoRenta_Entities.edmx</DependentUpon>
       <LastGenOutput>ImpuestoRenta_Entities.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="ImpuestoRentaAppDAL\ImpuestoRenta_Entities.edmx.sql" />
     <Content Include="ImpuestoRentaAppDAL\ImpuestoRenta_Entities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ImpuestoRenta_Entities.edmx</DependentUpon>

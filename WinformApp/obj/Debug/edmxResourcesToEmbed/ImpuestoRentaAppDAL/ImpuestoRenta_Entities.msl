@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GSV_EnvioImpuestoRentaModelStoreContainer" CdmEntityContainer="GSV_EnvioImpuestoRentaEntities">
     <EntitySetMapping Name="ImpuestoRenta">
-      <EntityTypeMapping TypeName="GSV_EnvioImpuestoRentaModel.ImpuestoRenta">
+      <EntityTypeMapping TypeName="IsTypeOf(GSV_EnvioImpuestoRentaModel.ImpuestoRenta)">
         <MappingFragment StoreEntitySet="ImpuestoRenta">
           <ScalarProperty Name="impuestorenta_id" ColumnName="impuestorenta_id" />
           <ScalarProperty Name="impuestorentatipo_id" ColumnName="impuestorentatipo_id" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ImpuestoRentaTipo">
-      <EntityTypeMapping TypeName="GSV_EnvioImpuestoRentaModel.ImpuestoRentaTipo">
+      <EntityTypeMapping TypeName="IsTypeOf(GSV_EnvioImpuestoRentaModel.ImpuestoRentaTipo)">
         <MappingFragment StoreEntitySet="ImpuestoRentaTipo">
           <ScalarProperty Name="impuestorentatipo_id" ColumnName="impuestorentatipo_id" />
           <ScalarProperty Name="descripcion_impuesto_renta_tipo" ColumnName="descripcion_impuesto_renta_tipo" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Log">
-      <EntityTypeMapping TypeName="GSV_EnvioImpuestoRentaModel.Log">
+      <EntityTypeMapping TypeName="IsTypeOf(GSV_EnvioImpuestoRentaModel.Log)">
         <MappingFragment StoreEntitySet="Log">
           <ScalarProperty Name="log_id" ColumnName="log_id" />
           <ScalarProperty Name="descripcion_log" ColumnName="descripcion_log" />
@@ -29,18 +29,18 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="GSV_EnvioImpuestoRentaModel.sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(GSV_EnvioImpuestoRentaModel.sysdiagrams)">
         <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="GSV_EnvioImpuestoRentaModel.Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(GSV_EnvioImpuestoRentaModel.Usuario)">
         <MappingFragment StoreEntitySet="Usuario">
           <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
           <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
@@ -52,17 +52,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LogActividad">
-      <EntityTypeMapping TypeName="GSV_EnvioImpuestoRentaModel.LogActividad">
+      <EntityTypeMapping TypeName="IsTypeOf(GSV_EnvioImpuestoRentaModel.LogActividad)">
         <MappingFragment StoreEntitySet="LogActividad">
-          <ScalarProperty Name="impuestorenta_id" ColumnName="impuestorenta_id" />
-          <ScalarProperty Name="esta_activo" ColumnName="esta_activo" />
-          <ScalarProperty Name="condicion_accion" ColumnName="condicion_accion" />
-          <ScalarProperty Name="fecha_accion" ColumnName="fecha_accion" />
-          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
-          <ScalarProperty Name="descripcion_accion" ColumnName="descripcion_accion" />
-          <ScalarProperty Name="log_id" ColumnName="log_id" />
-          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
           <ScalarProperty Name="logactividad_id" ColumnName="logactividad_id" />
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="descripcion_accion" ColumnName="descripcion_accion" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="fecha_accion" ColumnName="fecha_accion" />
+          <ScalarProperty Name="condicion_accion" ColumnName="condicion_accion" />
+          <ScalarProperty Name="esta_activo" ColumnName="esta_activo" />
+          <ScalarProperty Name="impuestorenta_id" ColumnName="impuestorenta_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

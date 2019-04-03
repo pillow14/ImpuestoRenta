@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WinformApp
 {
-    public partial class Form5 : Form
+    public partial class Form5 : MetroSet_UI.Forms.MetroSetForm
     {
         Util.Utilitario utilitario = new Util.Utilitario();
         
@@ -99,5 +99,9 @@ namespace WinformApp
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
