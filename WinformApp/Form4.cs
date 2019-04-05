@@ -76,16 +76,20 @@ namespace WinformApp
                     {
                         MessageBox.Show("Carga masiva exitosa!");
                         CargaDataTablaUsuario();
+                        
                     }
                     else
                     {
                         MessageBox.Show("Error en carga masiva. Consulte Log de actividades");
+                        
                     }
 
+                    fileExcel.FileName = "";
                 }
             }
             catch (Exception ex)
             {
+                fileExcel.FileName = "";
                 MessageBox.Show("Ocurrio el siguiente error:" + "" + ex.Message);
             }
 

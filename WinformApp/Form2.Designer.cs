@@ -38,17 +38,17 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(26, 62);
+            this.dataGridView2.Location = new System.Drawing.Point(26, 75);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(596, 150);
             this.dataGridView2.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(12, 231);
+            this.button1.Location = new System.Drawing.Point(26, 231);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(89, 36);
             this.button1.TabIndex = 1;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = false;
@@ -57,25 +57,25 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(108, 231);
+            this.button2.Location = new System.Drawing.Point(267, 231);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(109, 36);
             this.button2.TabIndex = 2;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(205, 231);
+            this.button3.Location = new System.Drawing.Point(515, 231);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(107, 36);
             this.button3.TabIndex = 3;
             this.button3.Text = "Modificar";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(663, 323);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

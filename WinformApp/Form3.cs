@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WinformApp
 {
-    public partial class Form3 : Form
+    public partial class Form3 : MetroSet_UI.Forms.MetroSetForm
     {
         public Form3()
         {

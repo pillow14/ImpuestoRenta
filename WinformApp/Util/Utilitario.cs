@@ -126,5 +126,21 @@ namespace WinformApp.Util
 
             return validacion;
         }
+
+        /// <summary>
+        /// Chequea si string contiene solo numeros
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns>true : contiene solo numeros ; false : contiene letras</returns>
+        public bool ContieneSoloNumeros(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
+        }
     }
 }

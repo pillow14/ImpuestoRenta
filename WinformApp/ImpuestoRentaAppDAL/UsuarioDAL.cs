@@ -13,6 +13,7 @@ using System.Configuration;
 
 namespace WinformApp.ImpuestoRentaAppDAL
 {
+    
     public class UsuarioDAL
     {
         private GSV_EnvioImpuestoRentaEntities db = new GSV_EnvioImpuestoRentaEntities();
@@ -68,6 +69,9 @@ namespace WinformApp.ImpuestoRentaAppDAL
         /// <returns></returns>
         public int InsertarCargaMasivaUsuarios(string path)
         {
+            //Usuario usuarioChequeo = new Usuario();
+            //UsuarioDAL usuarioDal = new UsuarioDAL();
+            Util.Utilitario utilitario = new Util.Utilitario();
             int resultado = 0;
             string connectionString = ConfigurationManager.ConnectionStrings["Excel07ConString"].ConnectionString;
 
@@ -103,21 +107,30 @@ namespace WinformApp.ImpuestoRentaAppDAL
             {
                 if (row["nombre_usuario"].ToString() != "" && row["correo_electronico"].ToString() != "" && row["rut"].ToString() != "" && row["clave"].ToString() != "")
                 {
-
-                    db.Usuario.Add(new Usuario
+                    //usuarioChequeo = usuarioDal.ObtenerUsuarioPorRut(row["rut"].ToString());
+                     if (utilitario.ContieneSoloNumeros(row["rut"].ToString()) == true && utilitario.ValidarRut(row["rut"].ToString()) == true)
                     {
-                        nombre_usuario = row["nombre_usuario"].ToString(),
-                        correo_electronico = row["correo_electronico"].ToString(),
-                        esta_activo = true,
-                        rut = row["rut"].ToString(),
-                        clave = row["clave"].ToString(),
-                    });
 
+                        db.Usuario.Add(new Usuario
+                        {
+                            nombre_usuario = row["nombre_usuario"].ToString(),
+                            correo_electronico = row["correo_electronico"].ToString(),
+                            esta_activo = true,
+                            rut = row["rut"].ToString(),
+                            clave = row["clave"].ToString(),
+                        });
+
+                    }
+                    else
+                    {
+                        return resultado;
+                    }
                 }
+
                 else
                 {
                     return resultado;
-                    
+
                 }
 
             }

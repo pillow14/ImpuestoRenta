@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WinformApp
 {
-    public partial class Form2 : Form
+    public partial class Form2 : MetroSet_UI.Forms.MetroSetForm
     {
         public Form2()
         {
