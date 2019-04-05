@@ -32,6 +32,8 @@
             this.btnCargaMasiva = new MetroSet_UI.Controls.MetroSetButton();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.fileExcel = new System.Windows.Forms.OpenFileDialog();
+            this.txtLabel = new MetroSet_UI.Controls.MetroSetLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             this.btnCargaMasiva.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnCargaMasiva.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnCargaMasiva.HoverTextColor = System.Drawing.Color.White;
-            this.btnCargaMasiva.Location = new System.Drawing.Point(502, 232);
+            this.btnCargaMasiva.Location = new System.Drawing.Point(372, 232);
             this.btnCargaMasiva.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargaMasiva.Name = "btnCargaMasiva";
             this.btnCargaMasiva.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -74,6 +76,7 @@
             this.btnCargaMasiva.Text = "Carga Masiva";
             this.btnCargaMasiva.ThemeAuthor = "Narwin";
             this.btnCargaMasiva.ThemeName = "MetroLite";
+            this.btnCargaMasiva.Click += new System.EventHandler(this.btnCargaMasiva_Click);
             // 
             // dgUsuarios
             // 
@@ -100,11 +103,24 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtLabel
+            // 
+            this.txtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtLabel.Location = new System.Drawing.Point(521, 243);
+            this.txtLabel.Name = "txtLabel";
+            this.txtLabel.Size = new System.Drawing.Size(97, 15);
+            this.txtLabel.Style = MetroSet_UI.Design.Style.Light;
+            this.txtLabel.StyleManager = null;
+            this.txtLabel.TabIndex = 6;
+            this.txtLabel.ThemeAuthor = "Narwin";
+            this.txtLabel.ThemeName = "MetroLite";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 272);
+            this.Controls.Add(this.txtLabel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dgUsuarios);
             this.Controls.Add(this.btnCargaMasiva);
@@ -122,5 +138,7 @@
         private MetroSet_UI.Controls.MetroSetButton btnCargaMasiva;
         private System.Windows.Forms.DataGridView dgUsuarios;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog fileExcel;
+        private MetroSet_UI.Controls.MetroSetLabel txtLabel;
     }
 }

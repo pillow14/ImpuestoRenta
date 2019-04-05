@@ -22,11 +22,18 @@ C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\WinformApp.exe
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\WinformApp.pdb
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\EntityFramework.dll
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\FastMember.dll
+C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\LinqToExcel.dll
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\MetroSet UI.dll
+C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\Remotion.Data.Linq.dll
+C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\Remotion.dll
+C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\Remotion.Interfaces.dll
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\WebDriver.dll
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\EntityFramework.xml
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\LinqToExcel.xml
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\WebDriver.xml
+C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\ImpuestoRentaApp.csprojAssemblyReference.cache
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\WinformApp.Form2.resources
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\WinformApp.Form3.resources
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\WinformApp.Form4.resources
@@ -38,5 +45,3 @@ C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\ImpuestoRentaApp.c
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\ImpuestoRentaApp.csproj.CopyComplete
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\WinformApp.exe
 C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\WinformApp.pdb
-C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\obj\Debug\ImpuestoRentaApp.csprojAssemblyReference.cache
-C:\Users\macbook\Proyectos\ImpuestoRenta\WinformApp\bin\Debug\FastMember.dll

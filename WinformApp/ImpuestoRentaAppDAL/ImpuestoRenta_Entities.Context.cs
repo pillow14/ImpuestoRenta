@@ -11,25 +11,32 @@ namespace WinformApp.ImpuestoRentaAppDAL
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class GSV_EnvioImpuestoRentaEntities : DbContext
     {
         public GSV_EnvioImpuestoRentaEntities()
             : base("name=GSV_EnvioImpuestoRentaEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<ImpuestoRenta> ImpuestoRenta { get; set; }
         public virtual DbSet<ImpuestoRentaTipo> ImpuestoRentaTipo { get; set; }
         public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<LogActividad> LogActividad { get; set; }
+
+
     }
+
 }
+
+
+

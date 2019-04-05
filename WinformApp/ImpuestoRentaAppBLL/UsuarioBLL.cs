@@ -54,5 +54,18 @@ namespace WinformApp.ImpuestoRentaAppBLL
             ImpuestoRentaAppDAL.UsuarioDAL usuarioDal = new ImpuestoRentaAppDAL.UsuarioDAL();
             return usuarioDal.IngresarUsuario(usuario);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public int InsertarCargaMasivaUsuarios(string path)
+        {
+            int resultado = 0;
+            ImpuestoRentaAppDAL.UsuarioDAL usuarioDal = new ImpuestoRentaAppDAL.UsuarioDAL();
+            resultado = usuarioDal.InsertarCargaMasivaUsuarios(path);
+            return resultado;
+        }
     }
 }

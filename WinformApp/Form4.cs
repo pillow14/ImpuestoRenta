@@ -18,11 +18,9 @@ namespace WinformApp
         {
             InitializeComponent();
             CargaDataTablaUsuario();
-            btnCargaMasiva.Enabled = false;
-
         }
 
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
@@ -56,5 +54,42 @@ namespace WinformApp
                 //columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
+
+        /// <summary>
+        /// Boton para cargar archivo excel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCargaMasiva_Click(object sender, EventArgs e)
+        {
+            int resultado;
+            try
+            {
+                DialogResult dialog = fileExcel.ShowDialog();
+                fileExcel.Filter = "allfiles|*.xls";
+                if (dialog == DialogResult.OK) // Test result.
+                {
+                    WinformApp.ImpuestoRentaAppBLL.UsuarioBLL usuarioBll = new ImpuestoRentaAppBLL.UsuarioBLL();
+                    resultado = usuarioBll.InsertarCargaMasivaUsuarios(fileExcel.FileName);
+
+                    if(resultado != 0)
+                    {
+                        MessageBox.Show("Carga masiva exitosa!");
+                        CargaDataTablaUsuario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en carga masiva. Consulte Log de actividades");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio el siguiente error:" + "" + ex.Message);
+            }
+
+        }
     }
 }
+
