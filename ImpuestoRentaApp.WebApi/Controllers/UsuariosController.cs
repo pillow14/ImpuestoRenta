@@ -13,6 +13,10 @@ namespace ImpuestoRentaApp.WebApi.Controllers
     {
         WinformApp.ImpuestoRentaAppBLL.UsuarioBLL usuarioBll = new WinformApp.ImpuestoRentaAppBLL.UsuarioBLL();
 
+        /// <summary>
+        /// Obtiene lista de usuarios
+        /// </summary>
+        /// <returns></returns>
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [HttpGet]
         public IHttpActionResult ObtenerListaUsuarios()
@@ -22,14 +26,30 @@ namespace ImpuestoRentaApp.WebApi.Controllers
             return Ok(listaUsuarios);
         }
 
-        [System.Web.Http.AcceptVerbs("GET", "POST")]
+        /// <summary>
+        /// Obtiene usuario por rut unico
+        /// </summary>
+        /// <param name="rut"></param>
+        /// <returns></returns>
         [HttpGet]
+        [Route("api/usuarios/ObtenerUsuarioPorRut")]
         public IHttpActionResult ObtenerUsuarioPorRut(string rut)
         {
+            WinformApp.ImpuestoRentaAppDAL.BO.UsuarioBO usuarioBo = new WinformApp.ImpuestoRentaAppDAL.BO.UsuarioBO();
             WinformApp.ImpuestoRentaAppDAL.Usuario usuario = new WinformApp.ImpuestoRentaAppDAL.Usuario();
             usuario = usuarioBll.ObtenerUsuarioPorRut(rut);
 
-            return Ok(usuario);
+            usuarioBo = new WinformApp.ImpuestoRentaAppDAL.BO.UsuarioBO()
+            {
+                NombreUsuario = usuario.nombre_usuario,
+                CorreoElectronico = usuario.correo_electronico,
+                EstaActivo = usuario.esta_activo,
+                DescripcionEstaActivo = usuario.esta_activo ==true? "SI" : "NO",
+                Rut = usuario.rut,
+                Clave = usuario.clave
+            };
+
+            return Ok(usuarioBo);
         }
     }
 }
